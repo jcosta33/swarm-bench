@@ -12,7 +12,8 @@
   },
   "scripts": {
     "bench": "node src/runner.mjs",
-    "bench:synthetic": "node src/runner.mjs"
+    "bench:synthetic": "node src/runner.mjs",
+    "bench:wild": "node src/wild-runner.mjs"
   },
   "swarmBench": {
     "swarmBin": "../swarm-cli/bin/swarm.js",

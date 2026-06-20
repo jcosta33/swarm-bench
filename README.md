@@ -53,6 +53,7 @@ set (clean cases declare `[]`); a malformed case refuses to load.
 ```
 npm run bench           # materialize the corpus, run swarm review --json, print the scored report
 npm run bench:synthetic # alias
+npm run bench:wild      # the WILD tier — real swarm-cli commits, RAW facts, no pass/fail (see wild/README.md)
 node src/runner.mjs --observe   # print each case's raw surfaced facts (no pass/fail) — for grounding
 node src/runner.mjs --json      # machine-readable scored result
 ```
@@ -119,6 +120,13 @@ correct runs, on this corpus. What they do **not** establish: real-world recall 
 changes (a less-biased "wild" set is the next data point, AC-003), or any team-level outcome. The
 effective-FP proxy here is the clean-case rate — a sampled human pass over a wild set is the
 complementary measure the spec's open question names.
+
+The **wild tier** (AC-003) is the first step toward that less-biased data point: it runs **real
+agent-authored swarm-cli commits** through the same `swarm review --json` contract and records the
+**raw facts the gate surfaces, with no expected facts and no pass/fail** — the owner judges each
+fact (real-issue vs noise). It is still self-measurement (self-family commits, bias recorded per
+case), but the change and the task intent are real, not hand-seeded. See **`wild/README.md`** and
+run `npm run bench:wild`.
 
 ## Layout
 
