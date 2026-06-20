@@ -1,4 +1,15 @@
-# swarm-bench
+# swarm-bench — simulated scenarios that exercise Swarm
+
+swarm-bench holds **simulated scenarios run against the real Swarm surface**. Two tiers:
+
+- **Tier 1 — review-gate measurement** (`src/` · `cases/` · `wild/`): seeded + wild changes run through the public `swarm review --json` contract, scored on recall + effective-FP. **FROZEN v0 (2026-06-20)** — see the banner below.
+- **Tier 2 — adoption walkthroughs** (`adoption/`): verified, executable illustrations of the pick-and-choose Swarm *adoption* paths — one per persona + adopted subset, grounded in the real docs / CLI / MCP / skills with verbatim captured output. See [`adoption/README.md`](./adoption/README.md).
+
+---
+
+## Tier 1 — review-gate measurement (FROZEN v0)
+
+> **Status: FROZEN (2026-06-20).** This tier delivered its verdict — recorded as DP-5/6/7 in swarm-hq `FINDING-review-gate-measurement`: the gate is **0% effective-FP on disciplined packets, ~91% on natural ones**, so its real-world value is contingent on packet discipline, not the gate logic. It is **not under active development**; the files below stay as the reproducible record. Revive only for a committed gate-precision push, which would also complete the unmet `AC-001` classes (`C013`, `emptyEvidencePassRows`) and add scorer self-tests (the v0→v1 reopen-list).
 
 A benchmark that measures the Swarm **review gate**'s mechanical **recall** and
 **effective-false-positive rate** by running seeded cases through the **public
