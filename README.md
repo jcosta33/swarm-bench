@@ -16,7 +16,7 @@ A benchmark that measures the Suspec **review gate**'s mechanical **recall** and
 `suspec review --json` contract**.
 
 It **never imports suspec-cli's Core** — it only shells out to the `suspec` binary and parses the
-published `--json` ReviewReport (the ADR-0085 posture: consume the contract, not the library). Both
+published `--json` ReviewReport. Both
 the suspec runner and the real binary exercise the full end-to-end path (run resolution + git diff),
 so the benchmark measures the same surface a reviewer or an MCP adapter consumes.
 
@@ -49,7 +49,7 @@ than invented ad hoc (each case's `failureModeSource` names its taxonomy tie).
 | Case                    | Category             | Seeds                                                            |
 | ----------------------- | -------------------- | ---------------------------------------------------------------- |
 | `outside-scope`         | `outsideScope`       | a committed change to a file outside the spec's Affected areas   |
-| `do-not-change-touched` | `doNotChangeTouched` | a committed change to a `## Do not change` file (C014, ADR-0086) |
+| `do-not-change-touched` | `doNotChangeTouched` | a committed change to a `## Do not change` file |
 | `claim-not-in-diff`     | `claimedNotInDiff`   | the Run summary claims a file that never changed                 |
 | `diff-not-claimed`      | `inDiffNotClaimed`   | a changed file the Run summary never listed                      |
 | `coverage-uncovered`    | `coverageUncovered`  | in-scope ACs with no review-packet coverage row (C012)           |
